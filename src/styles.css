@@ -503,8 +503,9 @@ footer{margin-top:0}
 .abnormal-login-body p{margin:0;color:#acbdca;font-size:14px;line-height:1.85}
 .abnormal-login-actions{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px}
 .abnormal-login-actions button{min-height:44px;border-radius:8px;font-size:14px;font-weight:600;transition:background .18s,border-color .18s,color .18s}
-.abnormal-ignore{background:#202d37;border:1px solid #3b4b58;color:#bdcbd5}
+.abnormal-ignore{background:#202d37;border:1px solid transparent;color:#bdcbd5}
 .abnormal-ignore:hover,.abnormal-ignore:focus-visible{background:#2b3c48;border-color:#819ba9;color:#fff}
+.abnormal-ignore:focus-visible{outline:none}
 .abnormal-relogin{background:var(--accent);border:1px solid #2bedef;color:#05262c}
 .abnormal-relogin:hover,.abnormal-relogin:focus-visible{background:#57edef;border-color:#80ffff}
 @media(max-width:640px){.abnormal-login-banner{min-height:140px}.abnormal-login-banner h2{font-size:21px;padding-left:22px}.abnormal-login-body{padding:22px}.abnormal-login-body h3{font-size:16px}}
