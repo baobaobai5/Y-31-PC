@@ -491,7 +491,7 @@ footer{margin-top:0}
 .popular-apps-dialog>.close svg{width:16px;height:16px}
 .notice-acknowledge-wrap{margin-top:24px}
 .notice-acknowledge-wrap .notice-acknowledge{margin-top:0}
-.notice-acknowledge[aria-disabled="true"]{background:#26333d;border-color:#364550;color:#71818e;box-shadow:none;transform:none;cursor:default}
+.notice-acknowledge[aria-disabled="true"]{background:#26333d;border-color:transparent;color:#71818e;box-shadow:none;transform:none;cursor:default}
 .notice-acknowledge[aria-disabled="false"]{background:var(--accent);border-color:#26e9eb;color:#062128;cursor:pointer}
 .notice-acknowledge[aria-disabled="false"]:hover,.notice-acknowledge[aria-disabled="false"]:focus-visible{background:#56ecee;box-shadow:0 5px 20px #00d2d82b}
 
