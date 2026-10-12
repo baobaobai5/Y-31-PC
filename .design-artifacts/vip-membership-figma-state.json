@@ -1,0 +1,18 @@
+{
+  "fileKey": "W8Yo2pYT9zQr4xsihEmfQ9",
+  "reviewId": "262:120946",
+  "componentSetId": "262:120945",
+  "states": [
+    "262:120045",
+    "262:120213",
+    "262:120717",
+    "262:120770",
+    "262:120854",
+    "262:120944"
+  ],
+  "editable": true,
+  "orders": 20,
+  "width": 720,
+  "font": "Noto Sans SC",
+  "fontLimitation": "Figma runtime does not offer PingFang SC"
+}

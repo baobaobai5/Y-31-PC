@@ -1,0 +1,20 @@
+{
+  "fileKey": "W8Yo2pYT9zQr4xsihEmfQ9",
+  "reviewId": "273:123248",
+  "componentSetId": "273:123247",
+  "states": [
+    "273:122309",
+    "273:122497",
+    "273:122675",
+    "273:122853",
+    "273:123035",
+    "273:123192"
+  ],
+  "width": 720,
+  "editable": true,
+  "font": "Noto Sans SC",
+  "stateCount": 6,
+  "editableTextCount": 239,
+  "prototypeConnections": 25,
+  "fontLimitation": "Figma 不提供 PingFang SC，使用 Noto Sans SC；侧栏分隔符采用 Inter。"
+}

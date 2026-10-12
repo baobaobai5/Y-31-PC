@@ -1,0 +1,16 @@
+import React,{useState} from 'react';
+import {Play,SpeakerHigh} from '@phosphor-icons/react';
+import './player-controls.css';
+const asset=name=>`/assets/player-controls/${name}`;
+const clock=value=>{const t=Math.max(0,Math.floor(value));return [Math.floor(t/3600),Math.floor(t/60)%60,t%60].map(n=>String(n).padStart(2,'0')).join(':')};
+export default function PlayerControls({portrait=false,time,duration,setTime,playing,setPlaying,speed,setSpeed,muted,setMuted,onFullscreen,onPrevious,onNext}){
+ const [preview,setPreview]=useState(null);
+ const seek=delta=>setTime(t=>Math.max(0,Math.min(duration,t+delta)));
+ const showPreview=e=>{const rect=e.currentTarget.getBoundingClientRect();setPreview(Math.max(0,Math.min(1,(e.clientX-rect.left)/rect.width)))};
+ return <div className="reference-controls"><img className="reference-controls-backdrop" src={asset('399a1.png')} alt=""/>
+ <div className="seek-shortcuts seek-back"><button aria-label="快退15分钟" onClick={()=>seek(-900)}><img src={asset('79201.svg')} alt=""/>15m</button><button aria-label="快退15秒" onClick={()=>seek(-15)}><img src={asset('13505.svg')} alt=""/>15S</button></div>
+ <div className="seek-shortcuts seek-forward"><button aria-label="快进15秒" onClick={()=>seek(15)}>15S<img src={asset('13505.svg')} alt=""/></button><button aria-label="快进15分钟" onClick={()=>seek(900)}>15m<img src={asset('79201.svg')} alt=""/></button></div>
+ <div className="reference-control-row"><div className="transport-controls"><button aria-label="上一集" onClick={onPrevious}><img src={asset('94031.svg')} alt=""/></button><button aria-label={playing?'暂停视频':'播放视频'} onClick={()=>setPlaying(!playing)}><img src={asset('480b0.svg')} alt=""/>{playing?<span className="pause-bars"/>:<Play className="transport-play" weight="fill"/>}</button><button aria-label="下一集" onClick={onNext}><img src={asset('ea674.svg')} alt=""/></button></div>
+ <div className="reference-seek" onPointerMove={showPreview} onPointerLeave={()=>setPreview(null)}><div className="seek-track"><span style={{width:`${time/duration*100}%`}}/></div><input type="range" aria-label="播放进度" aria-valuetext={clock(time)} min={0} max={duration} value={time} onChange={e=>{setTime(Number(e.target.value));setPreview(Number(e.target.value)/duration)}} onFocus={()=>setPreview(time/duration)} onBlur={()=>setPreview(null)}/>{preview!==null&&<div className="seek-preview" style={{left:`clamp(140px, ${preview*100}%, calc(100% - 140px))`}}><img className={`seek-preview-frame${portrait?' seek-preview-portrait':''}`} src="/assets/hero.png" alt="演示画面预览"/><img className="seek-preview-shade" src={asset('2b050.png')} alt=""/><time>{clock(preview*duration)}</time></div>}</div>
+ <time className="remaining-time">−{clock(duration-time)}</time><select aria-label="播放速度" value={speed} onChange={e=>setSpeed(Number(e.target.value))}>{[.5,1,1.5,2].map(n=><option key={n} value={n}>{n.toFixed(1)}X</option>)}</select><div className="transport-controls"><button aria-label={muted?'取消静音':'静音'} aria-pressed={muted} onClick={()=>setMuted(!muted)}>{muted?<img src={asset('47fb9.svg')} alt=""/>:<><img src={asset('480b0.svg')} alt=""/><SpeakerHigh className="transport-play" weight="fill"/></>}</button><button aria-label="全屏播放" onClick={onFullscreen}><img src={asset('58180.svg')} alt=""/></button></div></div></div>
+}

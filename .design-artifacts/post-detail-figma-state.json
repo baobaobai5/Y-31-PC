@@ -1,0 +1,18 @@
+{
+  "fileKey": "W8Yo2pYT9zQr4xsihEmfQ9",
+  "nodeId": "181:99394",
+  "libraryId": "181:100462",
+  "width": 1920,
+  "height": 4316,
+  "source": "http://127.0.0.1:5173/post/4",
+  "editableTexts": 226,
+  "instances": 15,
+  "font": "Noto Sans SC",
+  "removedCapture": "180:98325",
+  "verified": "Composition screenshot checked",
+  "latestPostsState": {
+    "nodeId": "187:99286",
+    "componentId": "187:99060",
+    "count": 8
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "fileKey": "W8Yo2pYT9zQr4xsihEmfQ9",
+  "page": "0:1",
+  "frames": {
+    "default": "148:91257",
+    "noTertiary": "150:87680",
+    "empty": "150:88029"
+  },
+  "width": 1920,
+  "contentWidth": 1400,
+  "columns": 5,
+  "rows": 4,
+  "reusedComicCard": "10:2979",
+  "font": "Noto Sans SC",
+  "fontLimitation": "PingFang SC unavailable in Figma"
+}

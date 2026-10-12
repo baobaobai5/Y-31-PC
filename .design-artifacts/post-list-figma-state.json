@@ -1,0 +1,39 @@
+{
+  "fileKey": "W8Yo2pYT9zQr4xsihEmfQ9",
+  "pageId": "174:95388",
+  "libraryId": "174:95389",
+  "source": "http://127.0.0.1:5173/posts",
+  "width": 1920,
+  "height": 2206.9375,
+  "defaultCategory": "最新",
+  "hasThirdOrSort": false,
+  "cards": 11,
+  "advertisementCards": 1,
+  "rows": 4,
+  "editableTexts": 136,
+  "instances": 83,
+  "fontLimitation": "Noto Sans SC replaces unavailable PingFang SC",
+  "verification": "Composition screenshot and image crops checked",
+  "removedCapture": "170:95388",
+  "additionalStates": [
+    {
+      "nodeId": "178:96284",
+      "state": "二级含三级",
+      "width": 1920,
+      "height": 2342.4375
+    },
+    {
+      "nodeId": "178:96658",
+      "state": "二级不含三级",
+      "width": 1920,
+      "height": 2267.4375
+    },
+    {
+      "nodeId": "178:98172",
+      "state": "缺省页",
+      "width": 1920,
+      "height": 1425
+    }
+  ],
+  "additionalStatesVerified": "All three composition screenshots checked; editable reusable components"
+}

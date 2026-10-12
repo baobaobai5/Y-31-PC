@@ -1,0 +1,21 @@
+{
+  "fileKey": "W8Yo2pYT9zQr4xsihEmfQ9",
+  "page": "0:1",
+  "frames": {
+    "default": "70:28907",
+    "noTertiary": "72:30220",
+    "viewport": "72:32575"
+  },
+  "library": "70:28850",
+  "portraitAdComponent": "70:28851",
+  "reusedPortraitCardComponent": "10:2248",
+  "width": 1920,
+  "contentWidth": 1400,
+  "columns": 5,
+  "rows": 4,
+  "coverAspectRatio": "3:4",
+  "supportOverlay": "74:32845",
+  "verification": "Editable component instances and text; full-page visual check passed",
+  "font": "Noto Sans SC (existing Figma file font)",
+  "referenceCapture": "Capture endpoint unreachable; matched existing image assets and live DOM dimensions"
+}

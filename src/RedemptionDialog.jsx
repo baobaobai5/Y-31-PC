@@ -1,0 +1,14 @@
+import React,{useEffect,useRef,useState} from 'react';
+import './redemption-dialog.css';
+export default function RedemptionDialog({account,onClose}){
+ const dialog=useRef(null),[code,setCode]=useState(''),[error,setError]=useState(''),[notice,setNotice]=useState('');
+ const storageKey=`wanxiang-redemptions-${account}`;
+ const [records,setRecords]=useState(()=>{try{return (JSON.parse(sessionStorage.getItem(storageKey))||[]).filter(record=>!String(record.id).startsWith('sample-'))}catch{return []}});
+ useEffect(()=>{dialog.current.showModal()},[]);
+ function validate(){if(!code.trim())return '请输入兑换码';if(!/^[A-Za-z0-9]{6,32}$/.test(code.trim()))return '请输入6–32位字母或数字兑换码';return ''}
+ function redeem(event){event.preventDefault();const next=validate();setNotice('');if(next){setError(next);return}const value=code.trim().toUpperCase();if(records.some(record=>record.code===value)){setError('该兑换码已使用');return}if(value!=='VIP202610'){setError('兑换码无效，请检查后重试');return}const updated=[{code:value,date:new Date().toLocaleDateString('sv-SE'),reward:'VIP 体验卡',id:Date.now()},...records];setRecords(updated);sessionStorage.setItem(storageKey,JSON.stringify(updated));setCode('');setError('');setNotice('兑换成功，已添加兑换记录（演示）')}
+ return <dialog ref={dialog} className="redemption-dialog" aria-labelledby="redemption-title" onCancel={event=>{event.preventDefault();onClose()}} onClick={event=>{if(event.target===dialog.current)onClose()}}>
+ <header className="redemption-heading"><div><h2 id="redemption-title">兑换功能</h2><p>输入兑换码即可兑换对应权益，兑换记录可在下方查看</p></div><button type="button" aria-label="关闭" onClick={onClose}><img src="/assets/profile/invite-close.svg" width="36" height="36" alt=""/></button></header>
+ <div className="redemption-body"><form onSubmit={redeem}><label htmlFor="redemption-code">兑换码</label><div className="redemption-input-row"><input id="redemption-code" autoFocus autoComplete="off" maxLength={32} placeholder="请输入兑换码" value={code} aria-invalid={Boolean(error)} aria-describedby={error?'redemption-error':undefined} onChange={event=>{setCode(event.target.value);setError('');setNotice('')}} onBlur={()=>setError(validate())}/><button disabled={!code.trim()||Boolean(error)}>立即兑换</button></div>{error&&<p id="redemption-error" className="redemption-error" role="alert">{error}</p>}{notice&&<p className="redemption-success" role="status">{notice}</p>}</form><h3>兑换明细</h3>{!records.length?<div className="redemption-empty" role="status"><img src="/assets/vip-center/empty-orders.png" alt="" width="160" height="160"/><h3>暂无兑换记录</h3></div>:<div className="redemption-records" role="region" aria-label="兑换明细，可上下滚动" tabIndex={0}>{records.map(record=><article key={record.id}><div><strong>{record.code}</strong><time>{record.date}</time></div><p>兑换 <b>{record.reward.split(' ')[0]}</b> {record.reward.split(' ').slice(1).join(' ')}</p></article>)}</div>}</div>
+ </dialog>;
+}

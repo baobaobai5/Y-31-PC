@@ -1,0 +1,16 @@
+{
+  "fileKey": "W8Yo2pYT9zQr4xsihEmfQ9",
+  "sourceUrl": "http://127.0.0.1:5173/comic/10",
+  "pageId": "159:89279",
+  "bodyPageId": "161:90851",
+  "libraryId": "159:89280",
+  "components": {"breadcrumb": "159:89433", "intro": "159:89482", "body": "161:90814", "directory": "159:89628", "comments": "159:89809"},
+  "width": 1920,
+  "height": 4531.6572265625,
+  "editableTexts": 298,
+  "componentInstances": 111,
+  "recommendationCards": 20,
+  "fontLimitation": "PingFang SC unavailable; editable Noto Sans SC used",
+  "verification": "Full-page and body component screenshots checked; source section positions and sizes matched",
+  "removedCapture": "157:89279"
+}

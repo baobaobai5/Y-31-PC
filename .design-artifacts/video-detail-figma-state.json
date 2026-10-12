@@ -1,0 +1,31 @@
+{
+  "fileKey": "W8Yo2pYT9zQr4xsihEmfQ9",
+  "page": "89:32155",
+  "board": "89:32156",
+  "player": "89:32165",
+  "info": "89:32248",
+  "episodes": "89:32351",
+  "comments": "89:32427",
+  "breadcrumb": "89:32439",
+  "capture": "86:32155",
+  "status": "complete",
+  "captureDeleted": true,
+  "playing": "95:33767",
+  "playerSet": "95:33824",
+  "episodeSet": "97:34274",
+  "expandedEpisodes": "97:33953",
+  "lineSet": "98:34208",
+  "commentSet": "98:34302",
+  "states": "99:34199",
+  "validation": {
+    "width": 1920,
+    "contentWidth": 1400,
+    "relatedCards": 20,
+    "textNodes": 301,
+    "instances": 145,
+    "newComponents": 14,
+    "newVariantSets": 5,
+    "font": "Noto Sans SC",
+    "fontNote": "PingFang SC unavailable; reused existing Figma type family"
+  }
+}
